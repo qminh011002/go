@@ -1,0 +1,29 @@
+package main
+
+type EmployeeGoogle struct {
+	firstName string
+	lastName  string
+	age       int
+}
+
+type EmployeeGrab struct {
+	firstName string
+	lastName  string
+	age       int
+}
+
+func main() {
+	// Pascal Case
+	// Structs, interface, enums
+
+	// snake_case
+	// user_id, first_name, http_request
+
+	// UPPERCASE
+	// use for constant
+
+	// mixedCase vs CamelCase
+	// eg: javaScript, htmlDocument, isValid
+	//
+
+}

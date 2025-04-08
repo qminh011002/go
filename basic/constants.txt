@@ -1,0 +1,17 @@
+package main
+
+const (
+	pi      float32 = 3.14
+	GRAVITY float32 = 9.81
+)
+
+func main() {
+	const days int = 7
+
+	const (
+		monday    = 2
+		tuesday   = 3
+		wednesday = 4
+	)
+
+}
