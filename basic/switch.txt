@@ -1,0 +1,169 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	// Switch statement
+	// switch expression {
+	// 	case value1:
+	// 		code block
+	// 	case value2:
+	// 		coed block
+	// 	case value3:
+	// 		code block
+	// 	default:
+	// 		code block
+	// }
+
+	// words := []string{"a", "cow", "smile", "gopher", "octopus"}
+
+	// for _, word := range words {
+	// 	switch size := len(word); size {
+	// 	case 1, 2, 3, 4:
+	// 		{
+	// 			fmt.Println(word, "is a short word")
+	// 		}
+	// 	case 5:
+	// 		wordLen := len(word)
+	// 		fmt.Println(word, "is exactly the right length", wordLen)
+	// 	case 6, 7, 8, 9:
+	// 	default:
+	// 		fmt.Println(word, "is a long word")
+	// 	}
+	// }
+
+	// loop:
+	//
+	//	for i := 0; i < 10; i++ {
+	//		switch i {
+	//		case 0, 2, 4, 6, 8:
+	//			fmt.Println("Even number is", i)
+	//		case 3, 5, 9:
+	//			fmt.Println("Odd number is", i)
+	//		case 7:
+	//			fmt.Println("Exit")
+	//			break loop
+	//		}
+	//	}
+
+	// fruit := "apple"
+
+	// fruit = strings.ToUpper(fruit)
+
+	// fmt.Println(fruit)
+
+	// Multiple condition
+	// day := "Monday"
+
+	// switch day {
+	// case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday":
+	// 	fmt.Println("it's a week day")
+	// case "Sunday", "Saturday":
+	// 	fmt.Println("It's a weekend")
+	// default:
+	// 	fmt.Println("Invalid day")
+	// }
+
+	// Blank switch
+	// number := 15
+
+	// switch {
+	// case number < 10:
+	// 	fmt.Println("Number smaller than 10")
+	// case number >= 10 && number < 20:
+	// 	fmt.Println("Number is greater than 10 and smaller than 19")
+	// default:
+	// 	fmt.Println("Invalid number")
+	// }
+
+	// words := []string{"hi", "salutations", "hellos"}
+
+	// for _, word := range words {
+	// 	switch wordLen := len(word); {
+	// 	case wordLen < 5:
+	// 		fmt.Println(word, "is a short word")
+	// 	case wordLen > 10:
+	// 		fmt.Println(word, "is a long word")
+	// 	default:
+	// 		fmt.Println(word, " is right lenght")
+	// 	}
+	// }
+
+	// num := 2
+
+	// switch {
+	// case num > 1:
+	// 	fmt.Println("Greater than 1")
+	// 	fallthrough
+	// case num == 2:
+	// 	fmt.Println("Number is 2")
+	// default:
+	// 	fmt.Println("Not Two")
+	// }
+
+	// var n int32 = 2
+	// checkType(n)
+
+	// checkType(true)
+
+	// fizzBuzzTradinational(10)
+	fizzBuzzSwitch(20)
+
+}
+
+func checkType(x interface{}) {
+	switch x.(type) {
+	case int32:
+		fmt.Println("It's an interger 32")
+
+	case int:
+		fmt.Println("It's an integer")
+
+	case float32:
+		fmt.Println("It's float")
+	case string:
+		fmt.Println("it's string")
+	case bool:
+		fmt.Println("it's boolean")
+	default:
+		fmt.Println("Unknown type")
+	}
+}
+
+func fizzBuzzTradinational(n int) {
+	for i := 1; i <= n; i++ {
+		if i%3 == 0 && i%5 == 0 {
+			fmt.Println("Fizzbuzz")
+			continue
+		}
+
+		if i%3 == 0 {
+			fmt.Println("Fizz")
+			continue
+		}
+
+		if i%5 == 0 {
+			fmt.Println("Buzz")
+			continue
+		}
+
+		fmt.Println(i)
+
+	}
+}
+
+func fizzBuzzSwitch(n int) {
+	for i := range n {
+		switch {
+		case i%3 == 0 && i%5 == 0:
+			fmt.Println("Fizzbuzz")
+		case i%3 == 0:
+			fmt.Println("Fizz")
+		case i%5 == 0:
+			fmt.Println("Buzz")
+		default:
+			fmt.Println(i)
+		}
+	}
+}

@@ -1,0 +1,41 @@
+package main
+
+import "fmt"
+
+func main() {
+	// The for-range statement
+	// for i := range 10 {
+	// 	fmt.Println(i)
+	// }
+
+	// The Conditional-only for statement
+	// i := 1
+
+	// for i < 10 {
+	// 	fmt.Println(i)
+	// 	i++
+	// }
+
+	// The infinite for statement
+	// j := 0
+
+	// for {
+	// 	j++
+	// 	fmt.Println(j)
+	// 	if j > 4 {
+	// 		break
+	// 	}
+	// }
+
+	num := 1
+
+	for num <= 10 {
+		if num%2 == 0 {
+			num++
+			continue
+		}
+		fmt.Println("odd number", num)
+		num++
+	}
+
+}

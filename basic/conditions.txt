@@ -1,0 +1,64 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+func main() {
+
+	// if condition {
+	// 		block of code
+	// }
+
+	age := 25
+
+	if age >= 18 {
+		fmt.Println("You are an adult")
+	} else {
+		fmt.Println("You are young")
+	}
+
+	// if condition {
+	// 		code block
+	// } else if condition {
+	// 		code block
+	// } else {
+	// 		code block
+	// }
+
+	temperature := 25
+
+	if temperature >= 30 {
+		fmt.Println("It's hot outside")
+	} else {
+		fmt.Println("It's cool")
+	}
+
+	if score := rand.Intn(100); score >= 90 {
+		fmt.Println("Grade A")
+	} else if score >= 80 {
+		fmt.Println("Grade B")
+	} else if score >= 70 {
+		fmt.Println("Grade C")
+	} else if score >= 60 {
+		fmt.Println("Grade D")
+	} else {
+		fmt.Println("Failed")
+	}
+
+	// if condition {
+	// 	code block
+	// 	if condition 2 {
+	// 		code block 2
+	// 	}
+	// }
+
+	num := 6
+
+	if num%2 == 0 {
+		if num%3 == 0 {
+			fmt.Println("Number is 6")
+		}
+	}
+}
