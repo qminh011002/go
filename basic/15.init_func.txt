@@ -1,0 +1,25 @@
+package main
+
+import "fmt"
+
+// Init
+
+// Practical use case
+//		Setup tasks
+//		Configuration
+//		Registering Component
+// 		Database Inititalization
+
+// Best Practice
+//
+//	Avoid Side Effects
+//	Initialization Order
+//	Documentation
+
+func init() {
+	fmt.Println("Initializing package")
+}
+
+func main() {
+	fmt.Println("Inside the main function")
+}

@@ -1,0 +1,27 @@
+package main
+
+import (
+	"fmt"
+)
+
+// all defer also call when panic() invoke
+
+func main() {
+	// Example for valid input
+	process(1)
+
+	// Example for invalid input
+	process(-1)
+}
+
+func process(input int) {
+	defer fmt.Println("Defer 1")
+	defer fmt.Println("Defer 2")
+
+	if input < 0 {
+		fmt.Println("Before panic")
+		panic("Input must be a non-negative number")
+	}
+
+	fmt.Println("Processing input:", input)
+}

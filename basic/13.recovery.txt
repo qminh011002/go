@@ -1,0 +1,31 @@
+package main
+
+import "fmt"
+
+// Practical Use Cases
+// 		Graceful Recovery
+//		Cleanup
+// 		Logging and Reporting
+// Best Pracgices
+//		Use with Defer
+// 		Avoid Slient Recvoery
+//		Avoid Overuse
+
+func main() {
+	process()
+	fmt.Println("Keep doing main go routine")
+}
+
+func process() {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("Recovered")
+		} else {
+			fmt.Println(r)
+		}
+	}()
+
+	fmt.Println("Start processing")
+
+	// panic("Something went wrong")
+}

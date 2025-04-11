@@ -1,0 +1,30 @@
+1. Why does Go require a runtime even though it compiles to machine code ?
+=> Even though Go is compiled langguage, its still required a runtime ti handle critical aspects of program execution.
+The Go runtime is responsibile for automatic GC (gargabe collection), goroutine schedulling for concurrency, memory management 
+(allocate memory for slice when len >= cap), and other essential runtime spport functions.
+Unlike interpreted languages (like Python, which needs an interpreter to run source code), Go compiles directly to machine code. 
+However, the compiled Go program still depends on the runtime for efficient execution.
+
+
+2. How does Go optimize imported packages to reduce tje final excutable size?
+=> Go's compiler and linker perform optimization similar to TREE SHAKING.
+Which means that even though an entire package is imported, but only the parts of the package that are acutally used in the code
+contribute to the final executable size. Unsued function, types, and other definition from the imported package
+are discarded the during the compiliation process.
+
+
+3. Which statement about GO maps is correct ?
+=> In Go, the zero value of a map is nil, which means a declared but uninitialized map cannot store
+key-value pairs until it is explicitly initizlied, using make or map literal. A nil map will cause a runtime panic 
+if you attempt to ADD element to it.
+
+
+4. What is key advantages of using multiple return values in Go ?
+=> One of the key advantages of multiple return values in Go is their role in error handling.
+Functions can return both a primary result andan error value, allowing the caller to check if the 
+function executed successfully. This pattern avoids the need for exceptions and makes error handling explicit and efficient.
+
+
+5. What is a key rule when defining a variadic function in Go ?
+=> In Go, a varidic function can accept a variable number of argumebts, but it has a strict rule: The variadic parameter must be
+the last param in the function signature. This ensures that Go can properly differentiate between regular param and the variadic list.

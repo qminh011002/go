@@ -1,0 +1,30 @@
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+// OS.exit not call defer
+// Use for exit program
+
+// Practical Use Cases
+// 		Error handling
+// 		Termination Condition
+// 		Exit Codes
+// Best pratices
+//		Avoid derrered actions
+// 		Status codes
+// 		Avoid abusive use
+
+func main() {
+	defer fmt.Println("Deferred Statement")
+
+	fmt.Println("Starting the main function")
+
+	// Exit with status code of 1
+	os.Exit(0)
+
+	// This will never be executed
+	fmt.Println("End of main function")
+}
