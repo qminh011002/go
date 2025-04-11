@@ -1,0 +1,12 @@
+package main
+
+import "fmt"
+
+func main() {
+	message := "Hello World"
+
+	// Range using with map, array, slice, channel
+	for i, v := range message {
+		fmt.Printf("Index %d, value %c \n", i, v)
+	}
+}

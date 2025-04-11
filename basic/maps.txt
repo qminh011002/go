@@ -1,0 +1,131 @@
+package main
+
+import "fmt"
+
+func main() {
+	// var nilMap map[string]int
+
+	// totalWins := map[string]int{}
+	// mapVariable := map[keyType]valueType {
+	//	key: value,
+	//	key: value,
+	// 	....
+	//}
+
+	// teams := map[string][]string{
+	// 	"Orcas":   {"Fred", "Ralph", "Bijou"},
+	// 	"Lions":   {"Sarah", "Peter", "Billie"},
+	// 	"Kittens": {"Waldo", "Raul", "Ze"},
+	// }
+
+	// ages := make(map[int][]string, 10)
+
+	// fmt.Println(len(ages))
+
+	// totalWins := map[string]int{}
+
+	// totalWins["Orcas"] = 1
+	// totalWins["Lions"] = 2
+
+	// v, ok := totalWins["Kittens"]
+	// fmt.Println(v, ok)
+	// fmt.Println(totalWins["Orcas"])   // 1
+	// fmt.Println(totalWins["Kittens"]) // 0
+	// totalWins["Kittens"]++
+	// fmt.Println(totalWins["Kittens"]) // 1
+	// totalWins["Lions"] = 3
+	// fmt.Println(totalWins["Lions"]) // 3
+
+	// m := map[string]int{
+	// 	"Hello": 5,
+	// 	"World": 0,
+	// }
+
+	// n := m
+
+	// fmt.Println(maps.Equal(m, n))
+
+	// fmt.Println(m)
+	// clear(m)
+	// fmt.Println(m)
+	// // v, ok := m["Hello"]
+
+	// // fmt.Println(v, ok)
+
+	// // z, ok := m["World"]
+
+	// // fmt.Println(z, ok)
+
+	// Using map as set
+
+	// intSet := map[int]bool{}
+
+	// vals := []int{5, 10, 2, 5, 8, 7, 3, 9, 1, 2, 10}
+
+	// for _, v := range vals {
+	// 	intSet[v] = true
+	// }
+
+	// fmt.Println(len(vals), len(intSet))
+
+	// fmt.Println(intSet[5])
+	// fmt.Println(intSet[500])
+
+	// if intSet[100] {
+	// 	fmt.Println("100 is in the set")
+	// }
+
+	// myMap := make(map[string]int)
+
+	// myMap["keyOne"] = 29
+
+	// fmt.Println(myMap)
+
+	// mVariable := map[int]string{
+	// 	1: "One",
+	// 	2: "Two",
+	// 	3: "Three",
+	// }
+
+	// if _, ok := myMap["keyOne"]; ok {
+	// 	fmt.Println("Ok")
+	// }
+
+	// fmt.Println(mVariable)
+
+	// myMap := map[string]int{
+	// 	"One": 1,
+	// 	"Two": 2,
+	// }
+
+	// myMap2 := map[string]int{
+	// 	"One": 1,
+	// 	"Two": 2,
+	// }
+
+	// if maps.Equal(myMap, myMap2) {
+	// 	fmt.Println("Both equal")
+	// } else {
+	// 	fmt.Println("Both are not equal")
+	// }
+
+	// for k, v := range myMap {
+	// 	fmt.Println(k, v)
+	// }
+
+	// var myMap map[string]string
+
+	// myMap = make(map[string]string)
+
+	// myMap["123"] = "123"
+
+	// fmt.Println(myMap)
+
+	nestedMap := make(map[string]map[string]int)
+
+	nestedMap["one"] = make(map[string]int)
+
+	nestedMap["one"]["two"] = 2
+
+	fmt.Print(nestedMap)
+}
