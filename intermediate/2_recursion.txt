@@ -1,0 +1,42 @@
+package main
+
+import "fmt"
+
+// Practical Use Case
+//		Mathematical Algorithms
+// 		Tree and Graph Traversal
+// 		Divide and Conquer Algorithms
+// Benefit
+// 		Simplicity
+//		Clarity
+// 		Flexiblity
+// Consideration
+//		Performance
+//		Base case
+//	Best practice
+// TEst
+// 		Optimiz
+// 		Recursive case
+
+func main() {
+	fmt.Println(sum(9))
+}
+
+func sum(n int) int {
+	if n > 0 {
+		return n + sum(n-1)
+	} else {
+		return n
+	}
+}
+
+func factorial(n int) int {
+	// Base case: factorial of 0 is 1
+	if n == 0 {
+		return 1
+	}
+
+	// Recursive case: factorial of n is n * factorial(n - 1)
+
+	return n * factorial(n-1)
+}

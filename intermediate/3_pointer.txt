@@ -1,0 +1,56 @@
+package main
+
+import "fmt"
+
+// A pointer is a variable that stores the memory address of another variable
+// Use cases
+//		Modify the value of a variable indirectly
+//		Pass large data strcuture efficiently between function
+//		Manage memory directly for performance reasons
+//
+
+func main() {
+
+	// var ptr *int
+
+	// x := 10
+	// pointerX := &x
+
+	// fmt.Println(pointerX) // 0x140000a6008
+	// // fmt.Println(*pointerX) // 10
+
+	// z := *pointerX + 5
+	// fmt.Println(z) // 15
+
+	// var pointerToX *int = &x
+
+	// fmt.Println(pointerToX)
+
+	// var pointerToX = new(int)
+
+	// fmt.Println(*pointerToX == 0)
+	// fmt.Println(pointerToX == nil)
+
+	// x := 10
+	// ptrX := &x
+	// prtXptrX := &ptrX
+	// fmt.Println(*prtXptrX == &x)
+
+	var ptr *int
+	// var a int = 10
+
+	// ptr = &a
+
+	fmt.Println(ptr == nil)
+	// fmt.Println(ptr)
+
+	x := 10
+	fmt.Println(x)
+
+	modifyValue(&x)
+	fmt.Println(x)
+}
+
+func modifyValue(ptr *int) {
+	*ptr++
+}

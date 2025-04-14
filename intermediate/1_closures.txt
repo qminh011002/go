@@ -1,0 +1,61 @@
+package main
+
+import "fmt"
+
+// Practical use case
+//		Stateful function
+//		Encapsulation
+// 		Callbacks
+
+// Usefulness of Closures
+//		Encapsulation
+//		Flexibility
+//		Readability
+
+// Considerations
+//		Memory usage
+//		Concurrency
+
+// Best Practice
+// 		limit Scope
+// 		Avoid oveuse
+
+func main() {
+	// increase := adder()
+
+	// fmt.Println(increase())
+	// fmt.Println(increase())
+	// fmt.Println(increase())
+	// fmt.Println(increase())
+
+	subtracter := func() func(int) int {
+		countDown := 100
+
+		decrease := func(x int) int {
+			countDown -= x
+			fmt.Println("Decrease by", x)
+			return countDown
+		}
+
+		return decrease
+	}()
+
+	// Using the closure subtracter
+	fmt.Println(subtracter(1))
+	fmt.Println(subtracter(1))
+	fmt.Println(subtracter(4))
+	fmt.Println(subtracter(5))
+
+}
+
+func adder() func() int {
+	i := 0
+
+	fmt.Println("Previous value of i:", i)
+
+	return func() int {
+		fmt.Println("Add 1 to i")
+		i++
+		return i
+	}
+}
