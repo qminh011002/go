@@ -1,0 +1,60 @@
+package main
+
+import "fmt"
+
+// FMT Package
+// Format Specifier
+//		%v: The value in default format
+// 		%+v: The value in a default format with field names - STRUCT
+//		%#v: A GO-syntax representation of the value
+// 		%T: The type of the value
+// 		%%: A literal percent sign
+// 		%d: Decimal interger
+//		%b: Binary representation
+//		%x: Hexadecimal representation with lowwercase
+//		%X: _____________________________ uppcase
+// 		%f: FLoating pount nunber
+// 		%s: String
+
+// Priting Fnuction
+//		Print()
+//		Println()
+//		Printf()
+
+// Formating Funcion
+//		Sprint()
+//		Sprintf()
+//		Sprintln()
+
+// Scanning functions
+//		Scan()
+//		Scanf()
+//		Scanln()
+
+// Error formating function
+//		Errof()
+
+func main() {
+	// fmt.Print("Hello ")
+	// fmt.Print("World !")
+	// fmt.Print(12, 3)
+
+	// fmt.Println("Hello ")
+	// fmt.Println("World !")
+	// fmt.Println(12, 3)
+
+	// name := "John"
+	// age := 25
+
+	// fmt.Printf("Name: %s, Age: %d \n", name, age)
+	// fmt.Printf("Binary: %b, Age: %x", age, age)
+
+	// Formating function
+
+	s := fmt.Sprint("Hello", "World!", 123, 456)
+	fmt.Println(s)
+
+	s = fmt.Sprintln("Hello", "World!", 123, 456)
+	fmt.Println(s)
+
+}
