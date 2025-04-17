@@ -1,0 +1,105 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+// Interface define a set of method signatures that a any type associate with must implement !
+// How interface useful ?
+//
+
+type any = interface{}
+
+// Interface
+type Geometer interface {
+	area() float64
+	perim() float64
+}
+
+// ------------------------------
+
+type rect struct {
+	width, height float64
+}
+
+func (r rect) area() float64 {
+	return r.height * r.width
+}
+func (r rect) perim() float64 {
+	return (r.height + r.width) * 2
+}
+
+// ------------------------------
+type rect1 struct {
+	width, height float64
+}
+
+func (r rect1) area() float64 {
+	return r.height * r.width
+}
+
+// func (r rect1) perim() float64 {
+// 	return r.height * r.width
+// }
+
+// ------------------------------
+
+type circle struct {
+	radius float64
+}
+
+func (c circle) area() float64 {
+	return math.Pi * math.Pow(c.radius, 2)
+}
+func (c circle) perim() float64 {
+	return 2 * math.Pi * c.radius
+}
+
+// ------------------------------
+
+func mesure(g Geometer) {
+	fmt.Println(g)
+	fmt.Println(g.area())
+	fmt.Println(g.perim())
+}
+
+// ----------------------------
+
+func myPrinter(i ...any) {
+	fmt.Printf("%T", i)
+	for _, v := range i {
+		fmt.Printf("%T \n", v)
+	}
+}
+
+func printTypes(i any) {
+	switch i.(type) {
+	case int:
+	}
+}
+
+func main() {
+	// r := rect{
+	// 	width:  3,
+	// 	height: 4,
+	// }
+
+	// c := circle{
+	// 	radius: 5,
+	// }
+
+	// // r1 := rect1{
+	// // 	width:  1,
+	// // 	height: 2,
+	// // }
+
+	// fmt.Println("Rect")
+	// mesure(r)
+	// fmt.Println("-----------")
+	// fmt.Println("Circle")
+	// mesure(c)
+
+	myPrinter("123", "Helloooo", false)
+	// mesure(r1) // ERROR because missing perim() method associated with Struct Rect1
+}
