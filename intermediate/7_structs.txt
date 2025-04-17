@@ -1,0 +1,117 @@
+package main
+
+// type Person struct {
+// 	name string
+// 	age  int
+// 	pet  string
+// }
+
+// type Person struct {
+// 	FirstName string
+// 	LastName  string
+// 	Age       int
+// }
+
+// func (p Person) String() string {
+// 	return fmt.Sprintf("%s %s, age %d", p.FirstName, p.LastName, p.Age)
+// }
+
+func main() {
+	// // var p Person
+
+	// // fmt.Println(p)
+
+	// person := Person{
+	// 	"Minh",
+	// 	22,
+	// 	"Dog",
+	// }
+
+	// person2 := Person{
+	// 	name: "Minh",
+	// 	age:  25,
+	// 	pet:  "dog",
+	// }
+
+	// fmt.Println(person)
+	// fmt.Println(person2)
+	// fmt.Println(person.name)
+
+	// var person struct {
+	// 	name string
+	// 	age  int
+	// }
+
+	// person.age = 1
+	// person.name = "Max"
+
+	// fmt.Print(person)
+
+	// person := struct {
+	// 	name string
+	// 	age  int
+	// }{
+	// 	name: "minh",
+	// 	age:  2,
+	// }
+
+	// fmt.Println(person)
+
+	// type firstPerson struct {
+	// 	name string
+	// 	age  int
+	// }
+
+	// type secondPerson struct {
+	// 	name string
+	// 	age  int
+	// }
+
+	// fmt.Println(firstPerson == secondPerson)
+
+	// type Score int
+	// // type Coverter func(string) Score
+	// // type TeamScore map[string]Score
+	// var score Score
+
+	// fmt.Println(score)
+
+	// p := Person{
+	// 	FirstName: "minh",
+	// 	LastName:  "tran",
+	// 	Age:       22,
+	// }
+
+	// output := p.String()
+
+	// fmt.Println(output)
+
+	// var c Counter
+
+	// doUpdateRight(&c)
+	// fmt.Println("in main", c.String())
+}
+
+// type Counter struct {
+// 	total       int
+// 	lastUpdated time.Time
+// }
+
+// func (c *Counter) Increment() {
+// 	c.total++
+// 	c.lastUpdated = time.Now()
+// }
+
+// func (c Counter) String() string {
+// 	return fmt.Sprintf("Total: %d, last updated: %v", c.total, c.lastUpdated)
+// }
+
+// func doUpdateWrong(c Counter) {
+// 	c.Increment()
+// 	fmt.Println("in doUppdatedWrong", c.String())
+// }
+
+// func doUpdateRight(c *Counter) {
+// 	c.Increment()
+// 	fmt.Println("in doUpdateRight", c.String())
+// }

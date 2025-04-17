@@ -1,0 +1,79 @@
+package main
+
+import "fmt"
+
+type Address struct {
+	city    string
+	country string
+}
+
+type Person struct {
+	firstName string
+	lastName  string
+	age       int
+	address   Address
+	PhoneHomeCell
+}
+
+type PhoneHomeCell struct {
+	home string
+	cell string
+}
+
+func (p Person) fullName() string {
+	return fmt.Sprintf("firstname: %s, lastname: %s, age is:%d", p.firstName, p.lastName, p.age)
+}
+
+func (p *Person) incrementAgeBy1() {
+	(*p).age++
+	fmt.Println(*p)
+}
+
+func main() {
+	// p := Person{
+	// 	firstName: "Minh",
+	// 	lastName:  "Tran",
+	// 	age:       2,
+	// }
+
+	// p1 := Person{
+	// 	firstName: "Minh",
+	// 	age:       22,
+	// }
+
+	// fmt.Println(p1.firstName)
+	// // fmt.Println(p1.lastName == "")
+	// // fmt.Println(p1.age)
+
+	// // Anonymous Struct
+
+	// user := struct {
+	// 	user_name  string
+	// 	password   string
+	// 	email      string
+	// 	is_deleted bool
+	// }{
+	// 	user_name: "bibabibu0110",
+	// 	password:  "zxcu9789asd",
+	// 	email:     "bibabibu0110@gmail.com",
+	// }
+
+	// fmt.Printf("%+v \n", user)
+
+	p := Person{
+		firstName: "Minh",
+		lastName:  "Tran",
+		age:       2,
+		address: Address{
+			city:    "Dong Nai",
+			country: "Vietnam",
+		},
+		PhoneHomeCell: PhoneHomeCell{
+			home: "123123",
+			cell: "123123",
+		},
+	}
+
+	fmt.Println(p.address.city)
+
+}
