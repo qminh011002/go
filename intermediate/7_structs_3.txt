@@ -1,0 +1,93 @@
+package main
+
+import "fmt"
+
+// Structs are defined using the 'type' and 'struct' keywords followed by
+// curly braces '{}'
+// Fields are defined with a name and a type
+
+// Struct and methods must be defined at package level, by designed in Golang
+// Both of them must be accessible throughout the package
+
+// Main funcion typically use for excecution logic
+
+// Separation of concerns | Data Definition & Execution Logic
+
+// func (p Person) fullName() string {
+// 	return fmt.Sprintf("First Name: %s, Last Name: %s, Age is: %d", p.firstName, p.lastName, p.age)
+// }
+
+//	func (p *Person) increaseAgeByOne() {
+//		p.age++
+//	}
+type Address struct {
+	city    string
+	country string
+}
+
+type Role struct {
+	role string
+}
+
+type Person struct {
+	firstName string
+	lastName  string
+	age       int
+	role      string
+	address   Address
+	Role
+}
+
+func main() {
+
+	p := Person{
+		firstName: "John",
+		lastName:  "Doe",
+		age:       23,
+		role:      "332",
+		address: Address{
+			city:    "Dong Nai",
+			country: "Viet Nam",
+		},
+		Role: Role{
+			role: "!@3",
+		},
+	}
+
+	p1 := Person{
+		firstName: "",
+	}
+
+	p2 := Person{
+		firstName: "",
+	}
+
+	fmt.Println(p1 == p2)
+
+	fmt.Println(p.address.city)
+	fmt.Println(p.Role.role)
+	// fmt.Println("Before increase", p.age)
+
+	// p.increaseAgeByOne()
+
+	// fmt.Println("After increase", p.age)
+
+	// fmt.Println(p.firstName)
+	// fmt.Println(p1.firstName)
+
+	// Anonymous struct
+
+	// var user struct {
+	// 	user_name string
+	// 	email     string
+	// }
+
+	// user := struct {
+	// 	user_name string
+	// 	email     string
+	// }{
+	// 	user_name: "minh",
+	// }
+	// 	email:     "pseudoemail@gmail.com",
+	// fmt.Println(user)
+}
