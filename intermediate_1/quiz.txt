@@ -1,0 +1,114 @@
+-- Question 1: Which of the following statements about closures in Go is true ?
+- Closure capture and can modify variables from their surrounding context
+- Closures in Go can capture and modify variables from their surrounding scope. This is a 
+key features of closures that allows them to maintain state across multiple function calls.
+
+
+-- Question 2: What is expected output of the following Go Program ?
+```
+package main
+
+import "fmt"
+
+func modifyValue(ptr *int) {
+    *ptr = 20
+    // dereferences and modify 
+}
+
+func main() {
+    value := 10
+    ptr := &value
+
+    fmt.Println("Before modification:", value) // 10
+
+    modifyValue(ptr)
+
+    fmt.Println("After modification:", value) // 20
+}
+```
+
+ptr is assigned the memory address of value, meaning ptr point to value. modifyValue(ptr)
+modifies *ptr, which updates value to 20. Since ptr point to value, changing *ptr also
+changes value directly
+
+-- Question 3:What will be the output of the following Go program ?
+```
+package main
+
+import "fmt"
+
+type Person struct {
+    firstName   string
+    lastName    string
+    age         int
+}
+
+func main() {
+    p1 := Person {"Alice", "Smith", 30}
+    p2 := Person {"Alice", "Smith", 30}
+
+    fmt.Println(p1 == p2)
+}
+```
+
+In Go, structs are comparable if all their field are comparable. p1 and p2 are initialized 
+with identical field values. Since all fields (firstname, lastname, age) are comparable
+(string and int tpyes). Go allows direct comparision using ==. Since both p1 and p2 have identical
+values, p1 == p2 evaluates to true, and "true" is printed.
+
+-- Question 4: What will be the ouput of the following Go program ?
+```
+package main
+
+import (
+    "fmt"
+)
+
+type Speaker interface {
+    Speak() string
+}
+
+type Dog struct {}
+
+func (d Dog) Speak() string {
+    return "Woof!"
+}
+
+func main() {
+    var s Speaker
+
+    d := Dog{}
+
+    fmt.Println(s == d)
+}
+```
+
+s is varaiables of type Speaker, but sincei t is declared without assignment, its value is <nil>.
+d is a struct instance of type Dog. When comparing an inteface with a concrete type, Go first checks
+whether the interface variable(s) is holding a value of the same concrete type (Dog). in this case, s is still nil,
+meaning it does not hold any Dog value. d, on the otherhand, is an actual struct instance of Dog.
+Since s does not hold d, the comparision s == d evaluates to false.
+
+
+-- Question 5: What will happen if the follwing Go code is executed ?
+```
+package main
+
+import "fmt"
+
+func Print[T any](value T) {
+    fmt.Println(value)
+}
+
+func main() {
+    Print(42)
+    Print("Hello")
+    Print([]int{1,2,3})
+}
+```
+
+The function Print[T any] is a generic function where T can be any type (using any as the constraint).
+The function prints the passed value using fmt.Println, which support printing various type.
+The main function calls Print with different types: Print(42) -> T is inferred as int,
+print 42. Print("Hello") -> T is inferred as string, print "Hello". Print([]int{1,2,3}) -> T is 
+inferred as []int, print [1,2,3]
